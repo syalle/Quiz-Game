@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            prefHeight="400.0" prefWidth="600.0" background="blue">
+    <children>
+        <VBox spacing="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+              AnchorPane.topAnchor="10.0" AnchorPane.bottomAnchor="10.0">
+            <!-- Title -->
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: darkpurple;"
+                   text="Quiz sorted by score" alignment="CENTER" />
+            <VBox spacing="10.0">
+                <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: darkpurple;"
+                       text="Quizz questions" />
+                <ListView fx:id="quizListView"  prefHeight="150.0" maxHeight="150.0"
+                          style="-fx-background-color: lavender;
+                                 -fx-border-color: darkpurple;
+                                 -fx-border-width: 1px;" />
+            </VBox>
+            <!--Filter -->
+            <VBox spacing="10.0">
+                <Label text="Search for question" />
+
+                <TextField fx:id="searchTextField" promptText="Text" />
+                <Label text="Search for score" />
+
+                <TextField fx:id="minScoreTextField" promptText="Score" />
+
+
+            </VBox>
+            <!-- Text Field and Area-->
+            <VBox spacing="10.0">
+                <Label text="Answer the selected question" />
+                <TextField fx:id="userAnswerUpdate" promptText="Answer:" />
+            </VBox>
+
+        <VBox spacing="10.0">
+<!--            <Label fx:id="totalScoreLabel" text="Total Score: 0" />-->
+            <TextField fx:id="totalScoreTextField" editable="false" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+
+            <Button fx:id="hintButton" text="Get Hint (Penalty 2 points for the hint)" onAction="#handleHintButton" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+        </VBox>
+        </VBox>
+    </children>
+
+</AnchorPane>
